@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Investimentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#" onclick="navegar('home')">Home</a></li>
+            <li><a href="#" onclick="navegar('noticias')">Notícias</a></li>
+            <li><a href="#" onclick="navegar('acoes')">Ações</a></li>
+            <li><a href="#" onclick="navegar('cotacao')">Cotação</a></li>
+            <li><a href="#" onclick="navegar('login')">Login</a></li>
+        </ul>
+    </nav>
+
+    <div id="conteudo">
+        <!-- Home (padrão) -->
+        <section id="home" class="pagina ativa">
+            <h1>Bem-vindo ao Dashboard de Investimentos</h1>
+            <p>Gerencie seus investimentos pessoais com facilidade e segurança.</p>
+        </section>
+
+        <!-- Notícias -->
+        <section id="noticias" class="pagina">
+            <h2>Notícias do Mercado</h2>
+            <div id="lista-noticias">
+                <!-- Notícias serão inseridas dinamicamente -->
+            </div>
+        </section>
+
+        <!-- Ações -->
+        <section id="acoes" class="pagina">
+            <h2>Suas Ações</h2>
+            <div id="lista-acoes">
+                <!-- Integração com seu backend futuramente -->
+                <p>Você ainda não possui ações cadastradas.</p>
+            </div>
+        </section>
+
+        <!-- Cotação -->
+        <section id="cotacao" class="pagina">
+            <h2>Cotações de Ações</h2>
+            <p>Informações em tempo real serão integradas futuramente.</p>
+        </section>
+
+        <!-- Login -->
+        <section id="login" class="pagina">
+            <h2>Login</h2>
+            <form>
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Senha" required />
+                <button type="submit">Entrar</button>
+            </form>
+            <p><a href="#">Registrar-se</a></p>
+            <button onclick="navegar('noticias')">Entrar como visitante</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
