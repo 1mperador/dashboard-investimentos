@@ -27,6 +27,139 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
+    <style>
+        /* Estilo geral do body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #1e1e2f, #23243a);
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
 
+/* Títulos */
+h2, h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Lista de investimentos */
+#lista-investimentos {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  width: 350px;
+  background-color: #2f2f47;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+#lista-investimentos li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #44445a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#lista-investimentos li:last-child {
+  border-bottom: none;
+}
+
+#lista-investimentos button {
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#lista-investimentos button:hover {
+  background-color: #e03e3e;
+}
+
+/* Formulário */
+form#investimento-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 350px;
+  background-color: #2f2f47;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  margin-bottom: 30px;
+}
+
+form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #44445a;
+  color: #eee;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+form input:focus {
+  background-color: #55556e;
+  outline: none;
+}
+
+/* Botão do formulário */
+form button[type="submit"] {
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #e03e3e;
+  transform: scale(1.05);
+}
+
+/* Container do gráfico */
+div[style*="width: 250px"] {
+  background-color: #2f2f47;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* Botão logout */
+button {
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #e03e3e;
+  transform: scale(1.05);
+}
+
+    </style>
 </body>
 </html>

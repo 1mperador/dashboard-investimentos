@@ -1,10 +1,19 @@
 const API = "http://localhost:5000";
+const toggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+if (toggle && navLinks) {
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+}
 
 // Login
 document.getElementById("login-form")?.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const email = document.getElementById("login-email").value;
-  const senha = document.getElementById("login-senha").value;
+  const email = document.getElementById("email").value;
+  const senha = document.getElementById("senha").value;
+
 
   const res = await fetch(`${API}/login`, {
     method: "POST",
@@ -27,7 +36,7 @@ document.getElementById("register-form")?.addEventListener("submit", async (e) =
   const email = document.getElementById("register-email").value;
   const senha = document.getElementById("register-senha").value;
 
-  const res = await fetch(`${API}/register`, {
+  const res = await fetch(`${API}/registro`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, senha })
@@ -233,18 +242,58 @@ function navegar(id) {
     }
 }
 
-function carregarNoticias() {
-    const noticias = [
-        { titulo: "Selic permanece em 10,5%", resumo: "O Banco Central decidiu manter a taxa de juros básica da economia." },
-        { titulo: "Ibovespa fecha em alta", resumo: "Principal índice da bolsa brasileira subiu 1,5% nesta sexta-feira." },
-        { titulo: "Petrobras anuncia dividendos", resumo: "Estatal anuncia pagamento de dividendos no segundo semestre." }
-    ];
+// function carregarNoticias() {
+//     const noticias = [
+//         { titulo: "Selic permanece em 10,5%", resumo: "O Banco Central decidiu manter a taxa de juros básica da economia." },
+//         { titulo: "Ibovespa fecha em alta", resumo: "Principal índice da bolsa brasileira subiu 1,5% nesta sexta-feira." },
+//         { titulo: "Petrobras anuncia dividendos", resumo: "Estatal anuncia pagamento de dividendos no segundo semestre." }
+//     ];
 
-    const lista = document.getElementById("lista-noticias");
-    lista.innerHTML = "";
-    noticias.forEach(n => {
-        const div = document.createElement("div");
-        div.innerHTML = `<h4>${n.titulo}</h4><p>${n.resumo}</p>`;
-        lista.appendChild(div);
-    });
+//     const lista = document.getElementById("lista-noticias");
+//     lista.innerHTML = "";
+//     noticias.forEach(n => {
+//         const div = document.createElement("div");
+//         div.innerHTML = `<h4>${n.titulo}</h4><p>${n.resumo}</p>`;
+//         lista.appendChild(div);
+//     });
+// }
+function navegar(pagina) {
+    const secoes = document.querySelectorAll('.pagina');
+    secoes.forEach(secao => secao.classList.remove('ativa'));
+
+    const secaoAtiva = document.getElementById(pagina);
+    if (secaoAtiva) {
+        secaoAtiva.classList.add('ativa');
+    }
 }
+
+// Exemplo de como adicionar notícias (futuramente virá de uma API)
+document.addEventListener('DOMContentLoaded', () => {
+    const listaNoticias = document.getElementById('lista-noticias');
+    if (listaNoticias) {
+        listaNoticias.innerHTML = `
+            <article>
+                <h3>Bolsa fecha em alta impulsionada por setor bancário</h3>
+                <p>O índice Bovespa teve alta de 1,2% puxado pelas ações dos principais bancos.</p>
+            </article>
+            <article>
+                <h3>Dólar recua após alívio fiscal nos EUA</h3>
+                <p>A moeda americana fechou em queda com notícias positivas sobre o cenário fiscal.</p>
+            </article>
+        `;
+    }
+});
+
+document.querySelector(".botao-compra").addEventListener("click", () => {
+  document.getElementById("modalPlano").style.display = "block";
+});
+
+function fecharModal() {
+  document.getElementById("modalPlano").style.display = "none";
+}
+
+function confirmarCompra() {
+  alert("Obrigado por contratar um plano! Em breve entraremos em contato.");
+  fecharModal();
+}
+

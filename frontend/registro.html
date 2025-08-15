@@ -1,19 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Registrar</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Registro</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h2>Registro</h2>
-    <form id="registro-form">
-      <input type="email" id="email" placeholder="Email" required />
-      <input type="password" id="senha" placeholder="Senha" required />
+    <h2>Registrar-se</h2>
+    <form id="register-form">
+      <input type="email" id="register-email" placeholder="Email" required />
+      <input type="password" id="register-senha" placeholder="Senha" required />
+      <input type="password" id="confirmar-senha" placeholder="Confirmar Senha" required />
       <button type="submit">Registrar</button>
     </form>
-    <p>Já tem conta? <a href="index.html">Fazer login</a></p>
+    <p>Já tem conta? <a href="index.html">Entrar</a></p>
+    <button onclick="window.location.href='noticias.html'">Entrar como visitante</button>
   </div>
+  <script src="script.js"></script>
+  <style>
+          body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #1e1e2f, #23243a);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: #2f2f47;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  width: 350px;
+  text-align: center;
+  animation: fadeInUp 0.7s ease-out;
+}
+
+h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #44445a;
+  color: #fff;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+input:focus {
+  background-color: #55556e;
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff4d4d;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #e03e3e;
+  transform: scale(1.03);
+}
+
+p {
+  color: #ccc;
+  margin-top: 15px;
+}
+
+a {
+  color: #4da6ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #80ccff;
+}
+
+/* Animação ao carregar a tela */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  </style>
 </body>
 </html>

@@ -17,5 +17,107 @@
     <p>Não tem conta? <a href="registro.html">Registrar-se</a></p>
     <button onclick="window.location.href='noticias.html'">Entrar como visitante</button>
   </div>
+  <script src="script.js"></script>
+    <style>
+    /* Estilo geral do body e centralização da tela */
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(120deg, #1e1e2f, #23243a); /* Fundo em gradiente */
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+    /* Caixa principal do login */
+    .container {
+      background-color: #2f2f47; /* Cor de fundo da caixa */
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Sombra */
+      width: 350px;
+      text-align: center;
+      animation: fadeInUp 0.7s ease-out; /* Animação ao aparecer */
+    }
+
+    /* Título */
+    h2 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    /* Formulário de login */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; /* Espaço entre inputs */
+    }
+
+    /* Campos de input */
+    input {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #44445a; /* Fundo do input */
+      color: #fff;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Efeito ao focar no input */
+    input:focus {
+      background-color: #55556e;
+      outline: none;
+    }
+
+    /* Botões (entrar e visitante) */
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff4d4d; /* Cor principal dos botões */
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    /* Efeito hover nos botões */
+    button:hover {
+      background-color: #e03e3e;
+      transform: scale(1.03);
+    }
+
+    /* Texto abaixo do formulário */
+    p {
+      color: #ccc;
+      margin-top: 15px;
+    }
+
+    /* Link de registro */
+    a {
+      color: #4da6ff;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    /* Efeito hover no link */
+    a:hover {
+      color: #80ccff;
+    }
+
+    /* Animação de entrada da caixa */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    </style>
 </body>
 </html>
